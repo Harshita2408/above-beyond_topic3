@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Car Control Panel</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .login-form {
+            text-align: center;
+        }
+        .login-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            padding: 8px;
+            width: 200px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .login-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .car-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .car-info img {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        .car-info h2 {
+            margin-bottom: 10px;
+        }
+        .car-info p {
+            margin-bottom: 20px;
+        }
+        .car-info button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Car Control Panel</h1>
+
+        <!-- Login Form -->
+        <div class="login-form" id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Car Information for User 1 -->
+        <div class="car-info" id="car-info-user1" style="display: none;">
+            <img src="user1_car.jpg" alt="User 1's Car">
+            <h2>Welcome, User 1!</h2>
+            <p>Here is information about your smart car:</p>
+            <p>Model: XYZ Model</p>
+            <p>Color: Blue</p>
+            <p>License Plate: ABC123</p>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Car Information for User 2 -->
+        <div class="car-info" id="car-info-user2" style="display: none;">
+            <img src="user2_car.jpg" alt="User 2's Car">
+            <h2>Welcome, User 2!</h2>
+            <p>Here is information about your smart car:</p>
+            <p>Model: ABC Model</p>
+            <p>Color: Black</p>
+            <p>License Plate: HR0001</p>
+            <button onclick="logout()">Logout</button>
+
+                <!-- Car Information for User 3 -->
+    <div class="car-info" id="car-info-user3" style="display: none;">
+        <img src="user3_car.jpg" alt="User 3's Car">
+        <h2>Welcome, User 3!</h2>
+        <p>Here is information about your smart car:</p>
+        <p>Model: QWE Model</p>
+        <p>Color: Red</p>
+        <p>License Plate: XYZ789</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "user1" && password === "password1") {
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("car-info-user1").style.display = "block";
+            } else if (username === "user2" && password === "password2") {
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("car-info-user2").style.display = "block";
+            } else if (username === "user3" && password === "password3") {
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("car-info-user3").style.display = "block";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+
+        function logout() {
+            document.getElementById("login-form").style.display = "block";
+            document.getElementById("car-info-user1").style.display = "none";
+            document.getElementById("car-info-user2").style.display = "none";
+            document.getElementById("car-info-user3").style.display = "none";
+        }
+    </script>
+</div>
+</body>
